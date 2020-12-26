@@ -2,11 +2,8 @@
 using BAYSOFT.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Moq;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BAYSOFT.Core.Domain.Services.Tests.Default.Samples
 {

@@ -1,26 +1,21 @@
-﻿using BAYSOFT.Core.Domain.Entities.Default;
-using BAYSOFT.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
-using Microsoft.EntityFrameworkCore;
+﻿using BAYSOFT.Core.Domain.Interfaces.Infrastructures.Data.Contexts;
 using Moq;
-using System.Collections.Generic;
-using System.Linq;
-using BAYSOFT.Core.Domain.Services.Tests;
 
 namespace BAYSOFT.Core.Domain.Services.Tests.Default
 {
     public static class MockDefaultHelper
     {
-        internal static Mock<IDefaultDbContext> GetMockedDefaultDbContext()
+        internal static Mock<IDefaultDbContext> GetMockedDbContext()
         {
-            var mockedDeafultDbContext = new Mock<IDefaultDbContext>();
+            var mockedDbContext = new Mock<IDefaultDbContext>();
 
-            return mockedDeafultDbContext;
+            return mockedDbContext;
         }
-        internal static Mock<IDefaultDbContextQuery> GetMockedDefaultDbContextQuery()
+        internal static Mock<IDefaultDbContextQuery> GetMockedDbContextQuery()
         {
-            var mockedDeafultDbContextQuery = new Mock<IDefaultDbContextQuery>();
+            var mockedDbContextQuery = new Mock<IDefaultDbContextQuery>();
 
-            return mockedDeafultDbContextQuery;
+            return mockedDbContextQuery;
         }
     }
 }

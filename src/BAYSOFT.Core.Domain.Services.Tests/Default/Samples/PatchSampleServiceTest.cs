@@ -15,11 +15,11 @@ namespace BAYSOFT.Core.Domain.Services.Tests.Default.Samples
         private PatchSampleService GetMockedPatchSampleService()
         {
             var mockedDefaultDbContext = MockDefaultHelper
-                .GetMockedDefaultDbContext()
+                .GetMockedDbContext()
                 .AddMockedSamples();
 
             var mockedDefaultDbContextQuery = MockDefaultHelper
-                .GetMockedDefaultDbContextQuery()
+                .GetMockedDbContextQuery()
                 .AddMockedSamples();
 
             var mockedSampleValidator = new SampleValidator();
