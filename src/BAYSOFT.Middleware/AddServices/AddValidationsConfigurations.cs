@@ -1,11 +1,11 @@
-﻿using BAYSOFT.Core.Domain.Validations.DomainValidations.Default.Samples;
-using BAYSOFT.Core.Domain.Validations.EntityValidations.Default;
-using BAYSOFT.Core.Domain.Validations.Specifications.Default.Samples;
+﻿using BAYSOFT.Core.Domain.Default.Aggregates.Samples.Specifications;
+using BAYSOFT.Core.Domain.Default.Aggregates.Samples.Validations.DomainValidations;
+using BAYSOFT.Core.Domain.Default.Aggregates.Samples.Validations.EntityValidations;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BAYSOFT.Middleware.AddServices
 {
-    public static class AddValidationsConfigurations
+	public static class AddValidationsConfigurations
     {
         public static IServiceCollection AddSpecifications(this IServiceCollection services)
         {
@@ -20,13 +20,12 @@ namespace BAYSOFT.Middleware.AddServices
             return services;
         }
         public static IServiceCollection AddDomainValidations(this IServiceCollection services)
-        {
-            services.AddTransient<PutSampleSpecificationsValidator>();
-            services.AddTransient<PostSampleSpecificationsValidator>();
-            services.AddTransient<PatchSampleSpecificationsValidator>();
-            services.AddTransient<DeleteSampleSpecificationsValidator>();
+		{
+			services.AddTransient<UpdateSampleSpecificationsValidator>();
+			services.AddTransient<CreateSampleSpecificationsValidator>();
+			services.AddTransient<DeleteSampleSpecificationsValidator>();
 
-            return services;
+			return services;
         }
     }
 }

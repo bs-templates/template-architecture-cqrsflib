@@ -1,5 +1,5 @@
 ﻿using BAYSOFT.Abstractions.Core.Domain.Interfaces.Services;
-using BAYSOFT.Core.Domain.Entities.Default;
+using BAYSOFT.Core.Domain.Default.Aggregates.Samples.Entities;
 
 namespace BAYSOFT.Core.Domain.Interfaces.Services.Default.Samples
 {

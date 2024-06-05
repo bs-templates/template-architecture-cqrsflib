@@ -1,19 +1,16 @@
-﻿using BAYSOFT.Core.Domain.Interfaces.Services.Default.Samples;
-using BAYSOFT.Core.Domain.Services.Default.Samples;
+﻿using BAYSOFT.Core.Domain.Interfaces.Infrastructures.Services;
+using BAYSOFT.Infrastructures.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BAYSOFT.Middleware.AddServices
 {
-    public static class AddDomainServicesConfigurations
+	public static class AddDomainServicesConfigurations
     {
         public static IServiceCollection AddDomainServices(this IServiceCollection services)
-        {
-            services.AddTransient<IPutSampleService, PutSampleService>();
-            services.AddTransient<IPostSampleService, PostSampleService>();
-            services.AddTransient<IPatchSampleService, PatchSampleService>();
-            services.AddTransient<IDeleteSampleService, DeleteSampleService>();
+		{
+			services.AddTransient<IMailService, MailService>();
 
-            return services;
-        }
+			return services;
+		}
     }
 }

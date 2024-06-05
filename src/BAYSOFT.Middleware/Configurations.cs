@@ -15,17 +15,18 @@ namespace BAYSOFT.Middleware
         {
             services.AddLocalization();
 
-            services.AddDbContexts(configuration, presentationAssembly);
-            services.AddSpecifications();
+			services.AddDbContexts(configuration);
+			services.AddSpecifications();
             services.AddEntityValidations();
             services.AddDomainValidations();
             services.AddDomainServices();
 
-            var assembly = AppDomain.CurrentDomain.Load("BAYSOFT.Core.Application");
+			var assemblyApplication = AppDomain.CurrentDomain.Load("BAYSOFT.Core.Application");
+			var assemblyDomain = AppDomain.CurrentDomain.Load("BAYSOFT.Core.Domain");
+			var assemblyInfrastructuresServices = AppDomain.CurrentDomain.Load("BAYSOFT.Infrastructures.Services");
+			services.AddMediatR(options => options.RegisterServicesFromAssemblies(assemblyApplication, assemblyDomain, assemblyInfrastructuresServices));
 
-            services.AddMediatR(assembly);
-
-            services.AddModelWrapper()
+			services.AddModelWrapper()
                 .AddDefaultReturnedCollectionSize(10)
                 .AddMinimumReturnedCollectionSize(1)
                 .AddMaximumReturnedCollectionSize(100)

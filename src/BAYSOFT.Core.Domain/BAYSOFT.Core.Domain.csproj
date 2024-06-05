@@ -1,28 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BAYSOFT.Abstractions" Version="1.0.0-beta" />
-    <PackageReference Include="MediatR" Version="9.0.0" />
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.0" />
+    <ProjectReference Include="..\BAYSOFT.Shared\BAYSOFT.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BAYSOFT.Core.Domain.Entities\BAYSOFT.Core.Domain.Entities.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Resources\EntitiesDefault.Designer.cs">
+    <Compile Update="Default\Resources\EntitiesDefault.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>EntitiesDefault.resx</DependentUpon>
@@ -35,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Resources\EntitiesDefault.resx">
+    <EmbeddedResource Update="Default\Resources\EntitiesDefault.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>EntitiesDefault.Designer.cs</LastGenOutput>
     </EmbeddedResource>
